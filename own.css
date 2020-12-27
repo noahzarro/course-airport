@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(27, 27, 27);
+}
+
+.departure-title {
+    color: rgb(252, 204, 8);
+    text-transform: uppercase;
+    font-size: 140px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 20px;
+}
+
+.small-title {
+    font-size: 30px;
+}
+
+.text-fields {
+    padding: 20px;
+    background-color: rgb(41, 41, 41);
+}
+
+.text-field {
+    padding-bottom: 20px;
+}
+
+.spacer {
+    padding: 10px;
+}

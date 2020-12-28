@@ -7,8 +7,10 @@
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="flip-res/jquery.splitflap.js"></script>
     <script src="own.js"></script>
+    <script src="blocks.js"></script>
     <link rel="stylesheet" href="flip-res/flip.css">
     <link rel="stylesheet" href="own.css">
+
 </head>
 
 <body>
@@ -27,32 +29,10 @@
     </div>
     <div class="spacer"></div>
 
-    <div class="text-fields">
-        <div class="text-field">
-            <div style="display:inline-block; width:1200px">
-                <div class="first-line" style="display:inline-block">Hockplanung 1 :::::::::</div>
-            </div>
-            <div class="first-line" style="display:inline-block">10:15</div>
-        </div>
-        <div class="text-field">
-            <div style="display:inline-block; width:1200px">
-                <div class="first-line" style="display:inline-block">Zmittag :::::::::::::::</div>
-            </div>
-            <div class="first-line" style="display:inline-block">12:30</div>
-        </div>
-        <div class="text-field">
-            <div style="display:inline-block; width:1200px">
-                <div class="first-line" style="display:inline-block">Hockplanung 2 :::::::::</div>
-            </div>
-            <div class="first-line" style="display:inline-block">14:30</div>
-        </div>
-        <div class="text-field">
-            <div style="display:inline-block; width:1200px">
-                <div class="first-line" style="display:inline-block">TNB Gruppe 2 ::::::::::</div>
-            </div>
-            <div class="first-line" style="display:inline-block">16:45</div>
-        </div>
+    <div id="text-fields-container" class="text-fields">
+
     </div>
+    <button onclick="create_line('asdf', 55,33);create_flips();">asfd</button>
 </body>
 
 </html>

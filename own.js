@@ -8,15 +8,23 @@ const new_line = (name, hour, minute) => `
 `;
 
 const default_name = "Kein Block             ";
-const max_num_of_blocks = 4;
+const max_num_of_blocks = 5;
 let current_first_block = -1;
 let debug_time = 1602223013
 
 function create_line(name, hour, minute, old_name, old_hour, old_minute) {
     let template_html = new_line(name, hour, minute)
     var new_element = $(template_html).appendTo("#text-fields-container")
-    new_element.find(".name").splitFlap({ image: "flip-res/images/chars.png", textInit: old_name });
-    new_element.find(".time").splitFlap({ image: "flip-res/images/chars.png", textInit: old_hour + ":" + old_minute });
+    new_element.find(".name").splitFlap({
+        image: "flip-res/images/chars.png",
+        textInit: old_name,
+        charsMap: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789.,!?#@()+-=  :ÄÖÜ',
+    });
+    new_element.find(".time").splitFlap({
+        image: "flip-res/images/chars.png",
+        textInit: old_hour + ":" + old_minute,
+        charsMap: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789.,!?#@()+-=  :ÄÖÜ',
+    });
 }
 
 function get_time() {

@@ -14,11 +14,9 @@ let debug_time = 1602223013
 
 function create_line(name, hour, minute, old_name, old_hour, old_minute) {
     let template_html = new_line(name, hour, minute)
-    console.log(template_html)
     var new_element = $(template_html).appendTo("#text-fields-container")
     new_element.find(".name").splitFlap({ image: "flip-res/images/chars.png", textInit: old_name });
     new_element.find(".time").splitFlap({ image: "flip-res/images/chars.png", textInit: old_hour + ":" + old_minute });
-    console.log(new_element)
 }
 
 function get_time() {
@@ -30,7 +28,7 @@ function clear_lines() {
     $("#text-fields-container").empty();
 }
 
-function set_lines() {
+function set_lines(repeat = false) {
     let blocks_added = 0;
     let prev_name = default_name;
     let prev_hour = "00";
@@ -61,11 +59,13 @@ function set_lines() {
         if (blocks_added == max_num_of_blocks) {
             break;
         }
-    };
+    }
 
+    if (repeat) {
+        setTimeout(set_lines, 60000, true)
+    }
 }
-
 // create lines
 $(document).ready(function() {
-    set_lines()
+    set_lines(true)
 });

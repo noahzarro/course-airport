@@ -25,7 +25,7 @@ for i in range(5, sheet.nrows):
     cur_year = datetime.datetime.now().year
     time = datetime.datetime(cur_year, int(month), int(day), int(hour), int(minute), tzinfo=tz.gettz("Europe / Zurich"))
      
-    blocks.append({"id": i-5,"name": name.ljust(name_length, " "), "time": datetime.datetime.timestamp(time), "hour": "{:02d}".format(int(hour)),"minute": "{:02d}".format(int(minute)) })
+    blocks.append({"id": i-5,"name": name.ljust(name_length, " ")[:name_length], "time": datetime.datetime.timestamp(time), "hour": "{:02d}".format(int(hour)),"minute": "{:02d}".format(int(minute)) })
     print(name + ": " + time.strftime("%c"))
 
 with open("blocks.js", "w") as f:
